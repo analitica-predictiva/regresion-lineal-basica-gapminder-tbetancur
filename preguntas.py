@@ -71,10 +71,10 @@ def pregunta_03():
     """
 
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = pd.read_csv('gm_2008_region.cs')
+    df = pd.read_csv("gm_2008_region.csv")
     
     # Asigne a la variable los valores de la columna `fertility`
-    X_fertility = df['fertility'].to_numpy() 
+    X_fertility = df['fertility'].to_numpy()
        
     # Asigne a la variable los valores de la columna `life`
     y_life = df['life'].to_numpy()
@@ -88,10 +88,7 @@ def pregunta_03():
 
     # Cree El espacio de predicción. Esto es, use linspace para crear
     # un vector con valores entre el máximo y el mínimo de X_fertility
-    prediction_space = np.linspace(
-        X_fertility.min(),
-        X_fertility.max(),100
-        ).reshape(-1,1)
+    prediction_space = np.linspace(X_fertility.min(),X_fertility.max(),100).reshape(-1,1)
 
     # Entrene el modelo usando X_fertility y y_life
     reg.fit(X_fertility.reshape(-1,1), y_life.reshape(-1,1))
